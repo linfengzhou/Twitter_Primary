@@ -3,7 +3,7 @@ var sample_data =[{"group": "Bernie Sanders", "name": "hillary", "value": 79}, {
     .container("#viz")
     .data(sample_data)
     .type("tree_map")
-    .color("group")                // groups colored to show ungrouping
+    .color("value")                // groups colored to show ungrouping
     .id({
       "value": ["group","name"],
       "grouping": false            // grouping set to false ungroups parent nesting
