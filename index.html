@@ -1,176 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <meta charset="utf-8">
-    <title>The Twitter Primary</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <link href="../../css/bootstrap.css" rel="stylesheet">
-    <link href="../../css/controlfrog.css" rel="stylesheet" media="screen">   
-	<link href="../../favicon.ico" rel="shortcut icon" type="image/x-icon" />
-	
-	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>    
-	<script src="js/moment.js"></script>	
-	<script src="js/easypiechart.js"></script>
-	<script src="js/gauge.js"></script>	
-	<script src="js/chart.js"></script>
-	<script src="js/jquery.sparklines.js"></script>			
-    <script src="js/bootstrap.js"></script>
-    <script src="js/controlfrog-plugins.js"></script>
+    <title>Twitter_Primary</title>
 
-     <!-- D3.js -->
-    <!--<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>-->
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- d3js -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js"></script>
+    
     <script src="js/nv.d3.min.js"></script>
+    
     <script src="js/stream_layers.js"></script>
-    <script src="http://www.d3plus.org/js/d3plus.js"></script>
+    <!-- // <script src="http://www.d3plus.org/js/d3.js"></script> -->
+    <!-- // <script src="http://www.d3plus.org/js/d3plus.js"></script> -->
+    <script src="js/d3plus.js"></script>
     
 
-     <!-- Bar CSS -->
+      <!-- Bar CSS -->
     <link rel="stylesheet" type="text/css" href="css/bar.css" />
     <link rel="stylesheet" type="text/css" href="css/nv.d3.css" />
-    <!--[if lt IE 9]>
-		<script src="../../js/respond.min.js"></script>
-		<script src="../../js/excanvas.min.js"></script>
-	<![endif]-->
-    
-    
-	<script>
-		var themeColour = 'white';
-	</script>
-    <script src="js/controlfrog.js"></script>
-
-    <style>
-
-#chart svg {
-  height: 470px;
-}
-
-#viz {
-	height: 300px;
-}
-
-#tweets{
-	font-size: 15px;
-}
-
-h5 {
-	color: black;
-}
-
-p{
-	color:black;
-}
-
-
-</style>
-
-
+    <link rel="stylesheet" type="text/css" href="css/treemap.css" />
+    <link rel="stylesheet" type="text/css" href="css/concept.css" />
 
 </head>
-<body class="white">
 
-	<div class="cf-nav cf-nav-state-min">
-		<a href="" class="cf-nav-toggle">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		</a>
-		
-		<ul>
-			<li class="current cf-nav-shortcut">
-				<a class="current active">
-					<span class="cf-nav-min">E</span>
-					<span class="cf-nav-max"><p>Election 2016</p></span>
-				</a>
-				<!--
-				<ul>
-					<li><a href="">Sub menu</a></li>
-					<li><a href="">Sub menu</a></li>
-					<li><a href="">Sub menu</a></li>										
-				</ul>
-				-->
-			</li>
-		</ul>
-	</div>
-	
-	<div class="cf-container cf-nav-active">
+<body>
 
-		<div class="row">
-			<div class="col-sm-6 cf-item">
-				<div class="inner">
-					<header>
-						<p><span></span>Scatterplot of Sentiment Analysis</p>
-					</header>
-					<div id="chart">
-  						<svg></svg>
-					</div>
+    <!-- Navigation -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <li class="sidebar-brand">
+                <a href="#top"  onclick = $("#menu-close").click(); >Start</a>
+            </li>
+            <li>
+                <a href="#top" onclick = $("#menu-close").click(); >Home</a>
+            </li>
+            <li>
+                <a href="#about" onclick = $("#menu-close").click(); >About</a>
+            </li>
+            <li>
+                <a href="#services" onclick = $("#menu-close").click(); >Bar</a>
+            </li>
+            <li>
+                <a href="#portfolio" onclick = $("#menu-close").click(); >Treemap</a>
+            </li>
+            <li>
+                <a href="#contact" onclick = $("#menu-close").click(); >Concept Map</a>
+            </li>
+        </ul>
+    </nav>
 
+    <!-- Header -->
+    <header id="top" class="header">
+        <div class="text-vertical-center">
+            <h1>TWITTER PRIMARY</h1>
+            <h3>Election 2016 Sentiment Analysis </h3>
+            <br>
+            <!-- <a href="#about" class="btn btn-dark btn-lg">Find Out More</a> -->
+        </div>
+    </header>
 
-				</div> <!-- //end inner -->
-				<div class="row">
-					<div class="col-sm-12">
-						<header>
-	<p id="tweets">
-		<span></span>
-	About
-	</p>
-</header>
-<h5>Scatterplot of Sentiment Analysis:</h5>
-<p> Two-dimension sentiment analysis results of all candidates, with each point in the plot represents one tweet.</p>
-<h5>Bar chart in Polarity dimension:</h5>
-<p> Averaged sentiment analysis results of all candidates in the polarity dimension (positive/negative).
-</p>
-<h5>Treemap for High Frequency Word:</h5>
-<p>
-Top-mentioned words on tweets for each candidate.
-</p>
-</div> <!-- //end cf-item -->
-					
-										
-				</div> <!-- // end row -->
-			</div> <!-- //end col -->
-			<div class="col-sm-6 cf-item">
-				<div class="row">
-					<div class="col-sm-12">
-						<div class="row">
-							<div class="col-sm-12">
-								<header>
-									<p><span></span>Bar Chart in Polarity dimension</p>
-								</header>
-									<div id="chart1" class='with-3d-shadow with-transitions'>
-                 					<svg width="700px" height="300px" ></svg>
-            					</div>
-							</div>
-						</div>
-					</div>
-				</div>
-							
-						<div class="row">
-							<div class="col-sm-12">
-								<header>
-									<p><span></span>Treemap for High Frequency Word</p>
-								</header>
-								<div id="viz" ></div>
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+                <div class="row">
+        <div class="col-md-6">
+            <h3 id = "abouttitle">
+                ABOUT
+            </h3>
+        </div>
+        <div class="col-md-6">
+            <p>
+                Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
+            </p>
+            <grammarly>
+                <div class="_9b5ef6-textarea_btn _9b5ef6-not_focused">
+                    <div class="_9b5ef6-transform_wrap">
+                        <div class="_9b5ef6-status">
+                        </div>
+                    </div>
+                </div>
+            </grammarly>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
+            </p>
 
-								
-							</div> <!-- //end cf-item -->
-						
-						</div> <!-- //end row -->						
-					</div> <!-- //end col -->
-				</div> <!-- //end row -->
-			</div> <!-- //end col -->
-		</div>
-	</div> <!-- //end container -->
+        </div>
+    </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
 
-	<!-- Scatter Plot JavaScript -->
-	<script src="js/d3_scatter.js"></script>
-	<!-- Bar Chart JavaScript -->
+    <!-- Services -->
+    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+    <section id="services" class="services bg-primary">
+        <div class="container">
+           
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Callout -->
+    <section class="callout">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <h3>
+                h3. Lorem ipsum dolor sit amet.
+            </h3>
+            <p>
+                Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
+            </p>
+
+        </div>
+        <div class="col-md-9">
+            <div id="chart1" class='with-3d-shadow with-transitions'>
+                                    <svg width="700px" height="300px" ></svg>
+                                </div>
+        </div>
+    </div>
+</div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+                <div class="row">
+                            <div class="col-sm-12">
+                                <header>
+                                    <h3>Treemap for High Frequency Word</h3>
+                                </header>
+                                <div id="viz" width:"1200px"></div>
+
+                                
+                            </div> <!-- //end cf-item -->
+                        
+                        </div> 
+    </div>
+           
+        <!-- /.container -->
+    </section>
+
+    <!-- Call to Action -->
+    <aside class="call-to-action bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3>Concept Map</h3>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Map -->
+    <section id="contact" class="map">
+        <div class="container">
+        <div class="row">
+        <div class="col-md-12">
+            <div class="conceptmap"></div>
+        </div>
+    </div>
+</div>
+       
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h4><strong>Election 2016</strong>
+                    </h4>
+                    <p>1 Metro Tech<br>Downtown Brooklyn, NY 11201</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-phone fa-fw"></i> (917) 865-9438</li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:name@example.com">lz1335@nyu.edu</a>
+                        </li>
+                    </ul>
+                    <br>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+                        </li>
+                    </ul>
+                    <hr class="small">
+                    <p class="text-muted">Copyright &copy; Linfeng Zhou 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script>
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
+
+        <!-- Scatter Plot JavaScript -->
+    <script src="js/d3_scatter.js"></script>
+    <!-- Bar Chart JavaScript -->
     <script src="js/d3_bar.js"></script>
     <!-- Treemap JavaScript -->
     <script src="js/d3_treemap.js"></script>
+    <!-- Concept Mao JavaScript -->
+    <script src="js/d3_concept.js"></script>
 
 </body>
+
 </html>

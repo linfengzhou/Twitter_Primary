@@ -3,13 +3,17 @@ var sample_data =[{"group": "Bernie Sanders", "name": "hillary", "value": 79}, {
     .container("#viz")
     .data(sample_data)
     .type("tree_map")
-    .color("value")                // groups colored to show ungrouping
+    .attrs(sample_data)
+    .dev(true)
+    .color("group")               // groups colored to show ungrouping
     .id({
       "value": ["group","name"],
       "grouping": false            // grouping set to false ungroups parent nesting
     })
+    .labels({"align": "left", "valign": "top"})
     .depth(1)
     .size("value")
     .text({"name":"name","group":"group"})
+    .font({ "family": "Palanquin"})
     .tooltip({"Candidates":["group"]})
     .draw() 
