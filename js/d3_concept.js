@@ -90,7 +90,7 @@ var color = d3.scale.linear()
     .range([colors.length-1, 0])
     .clamp(true);
 
-var diameter = 960;
+var diameter = 760;
 var rect_width = 100;
 var rect_height = 30;
 
@@ -158,8 +158,8 @@ var svg = d3.select(".conceptmap")
     .append("svg")
     .attr("width", diameter)
     .attr("height", diameter)
-  .append("g")
-    .attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+    .append("g")
+    .attr("transform", "translate(" + diameter / 2.5 + "," + diameter / 2.5 + ")");
     
 
 // links

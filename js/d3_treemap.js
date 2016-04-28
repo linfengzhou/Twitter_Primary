@@ -15,5 +15,5 @@ var sample_data =[{"group": "Bernie Sanders", "name": "hillary", "value": 79}, {
     .size("value")
     .text({"name":"name","group":"group"})
     .font({ "family": "Palanquin"})
-    .tooltip({"Candidates":["group"]})
+    .tooltip({"Candidates":["group"]}) 
     .draw() 
