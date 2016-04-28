@@ -11026,7 +11026,7 @@ nv.models.scatter = function() {
                     var vPointPaths = pointPaths
                         .enter().append("svg:path")
                         .attr("d", function(d) {
-                            if (d === undefined || !d || !d.data || d.data.length === 0)
+                            if (d === null || d === undefined || !d || !d.data || d.data.length === 0)
                                 return 'M 0 0';
                             else
                                 return "M" + d.data.join(",") + "Z";

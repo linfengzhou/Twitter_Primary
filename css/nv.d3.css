@@ -506,7 +506,8 @@ svg.nvd3-svg {
 
 .nvtooltip {
   position: absolute;
-  background-color: #E9E9E9;
+  margin:-20px;
+  background-color: #ccc;
   padding: 1px;
   border: 1px solid rgba(0,0,0,.2);
   z-index: 10000;
@@ -550,7 +551,7 @@ svg.nvd3-svg {
   border-radius: 5px 5px 0 0;
 }
 .nvtooltip p {
-  margin: 0;
+  margin-right:-100px;
   padding: 5px 14px;
   text-align: center;
 }
