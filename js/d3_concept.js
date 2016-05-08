@@ -1,4 +1,4 @@
-var data = [[63, ["berniesanders", "vote", "feelthebern", "inspired", "people", "democratic", "breaking", "floorfight", "hoodie", "beat"]], [186, ["trump", "going", "hillaryclinton", "foxnews", "bill", "sheriffclarke", "vote", "ffweekend", "sta", "people"]], [374, ["vote", "gop", "hillary", "clinton", "suppo", "people", "white", "pay", "republican", "president"]]]
+// var data = [[63, ["berniesanders", "vote", "feelthebern", "inspired", "people", "democratic", "breaking", "floorfight", "hoodie", "beat"]], [186, ["trump", "going", "hillaryclinton", "foxnews", "bill", "sheriffclarke", "vote", "ffweekend", "sta", "people"]], [374, ["vote", "gop", "hillary", "clinton", "suppo", "people", "white", "pay", "republican", "president"]]]
 
 
 var getJSON = function(url, callback) {
@@ -20,7 +20,10 @@ var getJSON = function(url, callback) {
 var data1 = null ;
 
 getJSON("http://twitter-primary.herokuapp.com/spider",function(err, newdata) {
-      data1 = newdata;  
+      data1 = newdata;
+      makeviz(data1)
+
+
 });
 // transform the data into a useful representation
 // 1 is inner, 2, is outer
@@ -30,7 +33,7 @@ getJSON("http://twitter-primary.herokuapp.com/spider",function(err, newdata) {
 // inner: 
 // links: { inner: outer: }
 
-
+function makeviz(data){
 var outer = d3.map();
 var inner = [];
 var links = [];
@@ -283,4 +286,5 @@ function get_name(d)
         return 'Donald Trump'
     }
 
+}
 }
