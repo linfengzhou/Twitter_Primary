@@ -553,7 +553,11 @@ svg.nvd3-svg {
 .nvtooltip p {
   margin-right:-100px;
   padding: 5px 14px;
+<<<<<<< HEAD
   text-align: center;
+=======
+  text-align: left;
+>>>>>>> master
 }
 .nvtooltip span {
   display: inline-block;

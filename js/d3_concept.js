@@ -1,9 +1,36 @@
+<<<<<<< HEAD
 var data = [
 [63, ["Hilary","Clinton","Feelthebern","York","Vote","Nyprimary","Trump","Remember","Brooklyn","Nyu"]], 
 [186, ["Trump","Sanders","Bernie","York","Vote","Donald","Crookedhillary","America"]], 
 [374, ["Vote","F**K","Coachella","Cruz","Chanting","York","Realdonaldtrump","America"]], 
 ];
 
+=======
+var data = [[63, ["berniesanders", "vote", "feelthebern", "inspired", "people", "democratic", "breaking", "floorfight", "hoodie", "beat"]], [186, ["trump", "going", "hillaryclinton", "foxnews", "bill", "sheriffclarke", "vote", "ffweekend", "sta", "people"]], [374, ["vote", "gop", "hillary", "clinton", "suppo", "people", "white", "pay", "republican", "president"]]]
+
+
+var getJSON = function(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("get", url, true);
+    xhr.responseType = "json";
+    xhr.onload = function() {
+      var status = xhr.status;
+      if (status == 200) {
+        callback(null, xhr.response);
+      } else {
+        callback(status);
+      }
+    };
+    xhr.send();
+};
+
+
+var data1 = null ;
+
+getJSON("http://twitter-primary.herokuapp.com/spider",function(err, newdata) {
+      data1 = newdata;  
+});
+>>>>>>> master
 // transform the data into a useful representation
 // 1 is inner, 2, is outer
 
