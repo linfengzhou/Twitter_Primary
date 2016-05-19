@@ -111,7 +111,7 @@ var color = d3.scale.linear()
     .range([colors.length-1, 0])
     .clamp(true);
 
-var diameter = 760;
+var diameter = 700;
 var rect_width = 100;
 var rect_height = 30;
 
@@ -153,8 +153,14 @@ function get_color(name)
     var c = Math.round(color(name));
     if (isNaN(c))
         return '#dddddd';   // fallback color
-    
-    return colors[c];
+    if (name == 63){
+        return '#B22222';
+    } else if(name == 186){
+        return '#EACE3F';
+    } else {
+        return '#282F6B';
+    }
+    // return colors[c];
 }
 
 // Can't just use d3.svg.diagonal because one edge is in normal space, the
@@ -179,8 +185,9 @@ var svg = d3.select(".conceptmap")
     .append("svg")
     .attr("width", diameter)
     .attr("height", diameter)
+    // .attr("padding", '30px')
     .append("g")
-    .attr("transform", "translate(" + diameter / 2.5 + "," + diameter / 2.5 + ")");
+    .attr("transform", "translate(" + 370 + "," + diameter / 2.5 + ")");
     
 
 // links
