@@ -140,7 +140,7 @@ In the sentiment analysis tab, the results of sentiment analysis on tweets were 
                         <svg></svg>
                     </div>
         </div>
-                <div class="col-md-4" style="overflow-y:scroll; overflow-x: hidden;height:470px;">
+                <div class="col-md-4">
                 <div>
                  <p>
                 Each point in the scatter plot represents one tweet, with the sentiment analysis results as the coordinates: x-axis value for objectivity (from 0.0 to 1.0) and y-axis value for polarity (from -1.0 to 1.0). Similar as above, the color of each point stands for the candidate that this tweet corresponds to. When hovering on a point, the corresponding tweet would be showed in a tooltip. 
@@ -152,6 +152,25 @@ In the sentiment analysis tab, the results of sentiment analysis on tweets were 
            
         </div>
         <!-- /.container -->
+    </section>
+
+        <section class="callout">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-3">
+ 
+            <p>
+              In this section, we want to visualize the polarity of tweets particularly. For each candidate, the positive score is the average of all positive tweets related to that candidate, while the negative score is the average of all negative tweets related to that candidate.
+            </p>
+
+        </div>
+        <div class="col-md-9">
+            <div id="chart1" class='with-3d-shadow with-transitions'>
+                                    <svg width="700px" height="300px" ></svg>
+                                </div>
+        </div>
+    </div>
+</div>
     </section>
 
     
