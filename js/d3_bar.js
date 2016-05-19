@@ -52,7 +52,7 @@ var long_short_data1 = [
         chart.yAxis.tickFormat(d3.format(',.2f'));
 
         chart.yAxis.axisLabel('Sensitive Scores');
-        chart.xAxis.axisLabel('Candidates').axisLabelDistance(20);
+        chart.xAxis.axisLabel('Group').axisLabelDistance(20);
 
         d3.select('#chart1 svg')
             .datum(long_short_data)
