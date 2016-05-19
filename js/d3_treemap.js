@@ -37,17 +37,17 @@ var visualization = d3plus.viz()
     .text({"name":"name","group":"group"})
     .font({ "family": "Palanquin"})
     .tooltip({"Candidates":["group"]}) 
-    .mouse({
-    "click": function(d, viz) {
-        var candidate= render_viz();
-        // console.log(candidate);
-        var newdata2 = filter_tweet(newdata,candidate);
-        // console.log(newdata2);
-        renderList(newdata2);
-        // console.log(newdata2)
+//     .mouse({
+//     "click": function(d, viz) {
+//         var candidate= render_viz();
+//         // console.log(candidate);
+//         var newdata2 = filter_tweet(newdata,candidate);
+//         // console.log(newdata2);
+//         renderList(newdata2);
+//         // console.log(newdata2)
 
-    }
-})
+//     }
+// })
     .draw() 
 }
 

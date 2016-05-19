@@ -142,8 +142,9 @@ In the sentiment analysis tab, the results of sentiment analysis on tweets were 
         </div>
                 <div class="col-md-4" style="overflow-y:scroll; overflow-x: hidden;height:470px;">
                 <div>
-                <ui id="tweetslist">
-                    </ui> 
+                 <p>
+                Each point in the scatter plot represents one tweet, with the sentiment analysis results as the coordinates: x-axis value for objectivity (from 0.0 to 1.0) and y-axis value for polarity (from -1.0 to 1.0). Similar as above, the color of each point stands for the candidate that this tweet corresponds to. When hovering on a point, the corresponding tweet would be showed in a tooltip. 
+                </p>
                 </div>
 
         </div>
@@ -179,11 +180,9 @@ In the sentiment analysis tab, the results of sentiment analysis on tweets were 
     <div class="container">
     <div class="row">
         <div class="col-md-3">
-            <h3>
-                h3. Lorem ipsum dolor sit amet.
-            </h3>
+            
             <p>
-                Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
+                In this section, we want to visualize the polarity of tweets particularly. For each candidate, the positive score is the average of all positive tweets related to that candidate, while the negative score is the average of all negative tweets related to that candidate.
             </p>
 
         </div>
@@ -214,11 +213,8 @@ In the sentiment analysis tab, the results of sentiment analysis on tweets were 
         <div class="container">
     <div class="row">
         <div class="col-md-5">
-            <h3>
-                h3. Lorem ipsum dolor sit amet.
-            </h3>
             <p>
-                Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
+               The network is designed to visualize the connection between keywords and each candidate. When clicking on the name of a candidate, all related keywords would be connected. Similarly, when clicking a keyword, all related candidates would be highlighted.
             </p>
         </div>
         <div class="col-md-7">
